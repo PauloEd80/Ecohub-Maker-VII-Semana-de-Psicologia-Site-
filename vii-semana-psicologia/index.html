@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Todas as imagens do projeto ficam em assets/img/ — nomes de arquivo,
+       dimensões recomendadas e onde cada uma é usada estão documentados
+       em assets/img/README.md. Para trocar uma imagem, basta substituir
+       o arquivo mantendo o mesmo nome; nenhum código precisa mudar. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VII Semana de Psicologia | Universidade Positivo — Campus Londrina-PR</title>
+  <meta name="description" content="VII Semana de Psicologia da Universidade Positivo (Campus Londrina-PR): 'Psicologia e seu projeto ético-político: história e enfrentamentos contemporâneos'. Confira a programação e inscreva-se.">
+  <meta name="theme-color" content="#0b2149">
+
+  <!-- Open Graph (compartilhamento em redes sociais) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="VII Semana de Psicologia — Universidade Positivo">
+  <meta property="og:description" content="Psicologia e seu projeto ético-político: história e enfrentamentos contemporâneos.">
+  <meta property="og:image" content="assets/img/hero-background.jpg">
+
+  <link rel="icon" type="image/png" href="assets/img/logo-universidade.png">
+
+  <!-- Otimização de performance: hero-background.jpg tende a ser o LCP
+       (Largest Contentful Paint) da página, então priorizamos seu download -->
+  <link rel="preload" as="image" href="assets/img/hero-background.jpg" fetchpriority="high">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container site-header__inner">
+      <a href="#topo" class="logo">
+        <!-- Placeholder gerado automaticamente: substituir por
+             assets/img/logo-universidade.png oficial (assessoria de
+             comunicação/marketing da instituição). -->
+        <img src="assets/img/logo-universidade.png" alt="Universidade Positivo" class="logo__image" width="40" height="40">
+        <span class="logo__text">
+          <strong>Universidade Positivo</strong>
+          <small>Campus Londrina-PR</small>
+        </span>
+      </a>
+
+      <nav class="nav" id="navMenu" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#destaques">Destaques</a></li>
+          <li><a href="#programacao">Programação</a></li>
+          <li><a href="#inscricao" class="btn btn--sm btn-cta">Inscreva-se</a></li>
+        </ul>
+      </nav>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu de navegação">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <!-- ================================ HERO ================================ -->
+    <section class="hero" id="topo" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow">Universidade Positivo · Campus Londrina-PR</p>
+          <h1 class="hero__title" id="hero-title">VII Semana de Psicologia</h1>
+          <p class="hero__theme">“Psicologia e seu projeto ético-político: história e enfrentamentos contemporâneos”</p>
+
+          <div class="hero__meta">
+            <span class="hero__meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+                <path d="M3 9h18"></path>
+                <path d="M8 3v4"></path>
+                <path d="M16 3v4"></path>
+              </svg>
+              25 de agosto de 2026
+            </span>
+            <span class="hero__meta-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"></path>
+                <circle cx="12" cy="10" r="2.5"></circle>
+              </svg>
+              Universidade Positivo — Campus Londrina
+            </span>
+          </div>
+
+          <div class="hero__actions">
+            <a href="#inscricao" class="btn btn-cta">Inscreva-se agora</a>
+            <a href="#programacao" class="btn btn--outline">Ver programação</a>
+            <button type="button" id="favoriteBtn" class="btn-favorite" aria-pressed="false">
+              <svg class="icon-star" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6L12 3.5Z"></path>
+              </svg>
+              <span class="favorite-label">Adicionar aos favoritos</span>
+            </button>
+          </div>
+
+          <div class="countdown" aria-label="Contagem regressiva para o evento">
+            <div class="countdown__item">
+              <span class="countdown__value" id="cd-days">00</span>
+              <span class="countdown__label">dias</span>
+            </div>
+            <div class="countdown__item">
+              <span class="countdown__value" id="cd-hours">00</span>
+              <span class="countdown__label">horas</span>
+            </div>
+            <div class="countdown__item">
+              <span class="countdown__value" id="cd-minutes">00</span>
+              <span class="countdown__label">minutos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================ SOBRE ================================ -->
+    <section class="about" id="sobre" aria-labelledby="sobre-title">
+      <div class="container about__inner">
+        <div class="about__media">
+          <!-- Imagem placeholder (composição abstrata gerada localmente).
+               Substituir por fotografia real do evento/campus e ajustar
+               o atributo alt de acordo com a nova imagem. -->
+          <img
+            src="assets/img/about-event.jpg"
+            alt="Composição gráfica abstrata em tons de azul e laranja, identidade visual do evento"
+            class="about__image"
+            loading="lazy"
+            width="1000"
+            height="1250"
+          >
+        </div>
+        <div class="about__content">
+          <span class="section-label">Sobre o evento</span>
+          <h2 id="sobre-title">Um espaço de reflexão crítica sobre a Psicologia</h2>
+          <p>A VII Semana de Psicologia da Universidade Positivo — Campus Londrina-PR — reúne estudantes, docentes, profissionais e a comunidade para refletir sobre a Psicologia como ciência e profissão comprometida com a dimensão ética e política de sua atuação.</p>
+          <p>Ao longo do evento, discutiremos como a trajetória histórica da profissão dialoga com os enfrentamentos que se colocam hoje diante da sociedade brasileira, em três dias de conferências, mesas-redondas, oficinas vivenciais e rodas de conversa.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== DESTAQUES ============================== -->
+    <section class="highlights" id="destaques" aria-labelledby="destaques-title">
+      <div class="container">
+        <span class="section-label">Destaques</span>
+        <h2 id="destaques-title">O que você vai encontrar na Semana</h2>
+
+        <div class="highlights-grid">
+          <article class="highlight-card">
+            <div class="highlight-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="9" y="2" width="6" height="12" rx="3"></rect>
+                <path d="M5 10a7 7 0 0 0 14 0"></path>
+                <path d="M12 17v4"></path>
+                <path d="M8 21h8"></path>
+              </svg>
+            </div>
+            <h3 class="highlight-card__title">Mesas-redondas e Conferências</h3>
+            <p>Discussões com pesquisadores e profissionais convidados sobre os desafios contemporâneos da profissão.</p>
+          </article>
+
+          <article class="highlight-card">
+            <div class="highlight-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 20h9"></path>
+                <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+              </svg>
+            </div>
+            <h3 class="highlight-card__title">Oficinas Vivenciais</h3>
+            <p>Atividades práticas e interativas voltadas à formação técnica e humana dos participantes.</p>
+          </article>
+
+          <article class="highlight-card">
+            <div class="highlight-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 8.6 8.6 0 0 1-4-1L3 20l1.1-5.4a8.4 8.4 0 1 1 16.9-3Z"></path>
+              </svg>
+            </div>
+            <h3 class="highlight-card__title">Rodas de Conversa</h3>
+            <p>Espaços de escuta e diálogo horizontal entre estudantes, docentes e comunidade.</p>
+          </article>
+
+          <article class="highlight-card">
+            <div class="highlight-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="8" r="6"></circle>
+                <path d="M9 13.5 7.5 21 12 18.5 16.5 21 15 13.5"></path>
+              </svg>
+            </div>
+            <h3 class="highlight-card__title">Certificação</h3>
+            <p>Certificado de participação para atividades complementares.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= PROGRAMAÇÃO ============================= -->
+    <section class="schedule" id="programacao" aria-labelledby="programacao-title">
+      <div class="container">
+        <span class="section-label">Programação</span>
+        <h2 id="programacao-title">Confira a grade de atividades</h2>
+
+        <!-- Conteúdo ilustrativo: ajustar horários, títulos e responsáveis
+             conforme a programação oficial confirmada pela organização. -->
+        <div class="schedule__days">
+          <div class="schedule__day">
+            <div class="schedule__day-header">
+              <strong>Dia 1</strong>
+              <span>25 de agosto (terça-feira)</span>
+            </div>
+            <ol class="schedule__list">
+              <li class="schedule__item">
+                <span class="schedule__time">18h00</span>
+                <span class="schedule__details">
+                  <strong>Credenciamento e abertura</strong>
+                  <span>Hall principal</span>
+                </span>
+              </li>
+              <li class="schedule__item">
+                <span class="schedule__time">19h00</span>
+                <span class="schedule__details">
+                  <strong>Conferência de abertura</strong>
+                  <span>Psicologia e projeto ético-político: fundamentos históricos</span>
+                </span>
+              </li>
+              <li class="schedule__item">
+                <span class="schedule__time">21h00</span>
+                <span class="schedule__details">
+                  <strong>Encerramento do dia</strong>
+                </span>
+              </li>
+            </ol>
+          </div>
+
+          <div class="schedule__day">
+            <div class="schedule__day-header">
+              <strong>Dia 2</strong>
+              <span>26 de agosto (quarta-feira)</span>
+            </div>
+            <ol class="schedule__list">
+              <li class="schedule__item">
+                <span class="schedule__time">19h00</span>
+                <span class="schedule__details">
+                  <strong>Mesa-redonda</strong>
+                  <span>Enfrentamentos contemporâneos da prática psicológica</span>
+                </span>
+              </li>
+              <li class="schedule__item">
+                <span class="schedule__time">20h30</span>
+                <span class="schedule__details">
+                  <strong>Oficinas simultâneas</strong>
+                  <span>Inscrição por ordem de chegada</span>
+                </span>
+              </li>
+              <li class="schedule__item">
+                <span class="schedule__time">22h00</span>
+                <span class="schedule__details">
+                  <strong>Encerramento do dia</strong>
+                </span>
+              </li>
+            </ol>
+          </div>
+
+          <div class="schedule__day">
+            <div class="schedule__day-header">
+              <strong>Dia 3</strong>
+              <span>27 de agosto (quinta-feira)</span>
+            </div>
+            <ol class="schedule__list">
+              <li class="schedule__item">
+                <span class="schedule__time">19h00</span>
+                <span class="schedule__details">
+                  <strong>Roda de conversa</strong>
+                  <span>Psicologia, ética e compromisso social</span>
+                </span>
+              </li>
+              <li class="schedule__item">
+                <span class="schedule__time">20h30</span>
+                <span class="schedule__details">
+                  <strong>Conferência de encerramento</strong>
+                </span>
+              </li>
+              <li class="schedule__item">
+                <span class="schedule__time">21h30</span>
+                <span class="schedule__details">
+                  <strong>Confraternização e encerramento</strong>
+                </span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CTA / INSCRIÇÃO ============================ -->
+    <section class="cta-section" id="inscricao" aria-labelledby="cta-title">
+      <div class="container cta-section__inner">
+        <h2 id="cta-title">Garanta sua vaga na VII Semana de Psicologia</h2>
+        <p>Acompanhe as atualizações sobre programação completa e inscrições.</p>
+        <!-- TODO: apontar para o formulário/plataforma oficial de inscrição -->
+        <a href="#" class="btn btn-cta btn--lg">Fazer inscrição</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== RODAPÉ ============================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <div class="site-footer__col">
+          <h3>VII Semana de Psicologia</h3>
+          <p>Universidade Positivo<br>Campus Londrina-PR</p>
+        </div>
+        <div class="site-footer__col">
+          <h3>Navegação</h3>
+          <ul>
+            <li><a href="#sobre">Sobre o evento</a></li>
+            <li><a href="#destaques">Destaques</a></li>
+            <li><a href="#programacao">Programação</a></li>
+            <li><a href="#inscricao">Inscrição</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Contato</h3>
+          <p>[e-mail de contato]</p>
+          <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+          </div>
+        </div>
+      </div>
+      <p class="site-footer__copy">© <span id="currentYear">2026</span> Universidade Positivo — Campus Londrina-PR. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
