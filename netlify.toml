@@ -1,0 +1,63 @@
+# ============================================================================
+# netlify.toml
+# VII Semana de Psicologia — Universidade Positivo (Campus Londrina-PR)
+# ============================================================================
+# ATENÇÃO: este arquivo foi RECONSTRUÍDO a partir da descrição textual
+# fornecida durante o desenvolvimento ("headers de segurança rígidos e
+# cache otimizado para /assets/*") — o conteúdo do netlify.toml já
+# existente no projeto não foi compartilhado nesta conversa. Antes de
+# substituir o arquivo real do repositório por este, comparem os dois e
+# mesclem manualmente qualquer regra específica que o original já tenha
+# (redirects, domínios extras no CSP, etc.), para não perder configuração.
+# ============================================================================
+
+[build]
+  publish = "."
+
+# ---------------------------------------------------------------------------
+# Headers de segurança — aplicados a todas as rotas.
+# O CSP abaixo é propositalmente rígido: só é possível porque o projeto não
+# usa nenhum estilo/script inline nem dependência externa (checado no
+# index.html antes de escrever este arquivo).
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), camera=(), microphone=()"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+
+# ---------------------------------------------------------------------------
+# Cache de /assets/*
+#
+# IMPORTANTE — decisão de propósito: NÃO usamos "immutable" com validade de
+# 1 ano aqui. O motivo é o próprio fluxo de trabalho do projeto: as imagens
+# em assets/img/ são trocadas mantendo o MESMO NOME de arquivo (ver
+# assets/img/README.md), em vez de nomes com hash (ex.: hero-abc123.jpg).
+# Um cache "immutable" faria navegadores de quem já visitou o site
+# ignorarem a imagem nova por até um ano, mesmo depois da troca no
+# servidor. Por isso usamos uma validade curta + revalidação: o navegador
+# ainda cacheia (evita redownload a cada navegação interna), mas confere
+# com o servidor com frequência suficiente para pegar trocas de conteúdo
+# no mesmo dia. Se no futuro o projeto migrar para nomes de arquivo com
+# hash/versão, aí sim vale trocar para "immutable, max-age=31536000".
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# HTML nunca deve ficar em cache agressivo — garante que atualizações de
+# conteúdo (programação, textos etc.) apareçam na próxima visita.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
