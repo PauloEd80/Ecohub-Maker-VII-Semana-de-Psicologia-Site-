@@ -1,4 +1,4 @@
-# VII Semana de Psicologia — Universidade Positivo (Campus Londrina-PR)
+# Universidade Positivo (Campus Londrina-PR)
 
 Landing page do evento **"Psicologia e seu projeto ético-político: história
 e enfrentamentos contemporâneos"**, promovido pela Universidade Positivo —
