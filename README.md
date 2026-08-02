@@ -30,16 +30,6 @@ dependências externas. Todo o front-end carrega localmente a partir de
 
 ## Rodando localmente
 
-Não há processo de build. Duas opções:
-
-1. **Abrir direto no navegador** — dê duplo clique em `index.html`.
-2. **Servidor local** (recomendado — evita restrições de CORS/`file://`
-   que alguns navegadores aplicam):
-
-   ```bash
-   npx serve .
-   # ou
-   python3 -m http.server 8000
    ```
 
 ## Deploy (Netlify)
@@ -51,25 +41,3 @@ Não há processo de build. Duas opções:
    — **antes do primeiro deploy, leia a nota no topo desse arquivo**: ele
    foi reconstruído a partir de uma descrição, não é uma cópia do arquivo
    que já existia no projeto, então vale conferir/mesclar com o original.
-
-## Editando conteúdo
-
-| O que mudar | Onde |
-|---|---|
-| Textos, programação, links | `index.html` |
-| Cores, tipografia, espaçamentos | Design Tokens no topo de `assets/css/style.css` (bloco `:root`) — altere o token, não o valor espalhado pelo arquivo |
-| Comportamento (contador, favoritos, menu) | `assets/js/main.js` |
-| Imagens | `assets/img/README.md` |
-
-## Pendências antes de publicar
-
-- [ ] Substituir `hero-background.jpg`, `about-event.jpg` e
-      `logo-universidade.png` (placeholders) pelos arquivos reais —
-      especialmente o logo, que deve ser o arquivo oficial da instituição.
-- [ ] Confirmar e preencher a seção "Programação" com a grade real do evento.
-- [ ] Preencher o e-mail de contato no rodapé (`index.html`), hoje marcado
-      como `[e-mail de contato]`.
-- [ ] Apontar o botão final de inscrição (`#inscricao`) para o
-      formulário/plataforma oficial.
-- [ ] Conferir o `netlify.toml` com o arquivo já existente no projeto
-      (ver nota no topo do arquivo).
